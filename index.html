@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HerGlow – Beauty at Home</title>
+<style>
+:root{--pink:#b84f79;--rose:#f7e6ec;--gold:#c69b52;--ink:#382631;--cream:#fffaf7}
+*{box-sizing:border-box}body{margin:0;font-family:Arial, sans-serif;background:var(--cream);color:var(--ink)}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 6%;background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 2px 14px #6b354015}
+.logo{font-family:Georgia,serif;font-size:27px;letter-spacing:2px;color:var(--pink);font-weight:bold}.logo small{display:block;font:10px Arial;letter-spacing:3px;color:var(--gold);text-align:center}
+nav a{margin:0 10px;text-decoration:none;color:var(--ink);font-size:14px}.lang button{border:1px solid var(--pink);background:white;color:var(--pink);padding:7px 11px;border-radius:20px;cursor:pointer}.lang button.active{background:var(--pink);color:white}
+.hero{min-height:440px;padding:70px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#fff7f3 0%,#fff1f5df 48%,#fff0 100%),url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=85') center/cover}
+.hero-content{max-width:520px}.eyebrow{color:var(--gold);letter-spacing:3px;font-size:12px;font-weight:bold}.hero h1{font:48px/1.08 Georgia,serif;margin:15px 0;color:#66384d}.hero p{line-height:1.7;color:#694e5b}.btn{display:inline-block;background:var(--pink);color:white;border:0;padding:13px 22px;border-radius:28px;text-decoration:none;cursor:pointer;font-weight:bold}.btn:hover{background:#963b61}
+section{padding:55px 6%}.section-title{text-align:center;font:34px Georgia,serif;color:#713d55;margin:0 0 10px}.sub{text-align:center;color:#8b737d;margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.service{background:white;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px #61394b12}.service img{width:100%;height:155px;object-fit:cover}.service div{padding:16px}.service h3{margin:0 0 8px;font:21px Georgia;color:#713d55}.price{color:var(--pink);font-weight:bold}.note{font-size:12px;color:#8c7881}
+.benefits{background:#f8eaf0}.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.benefit{background:#fff;border-radius:14px;padding:22px;text-align:center}.benefit b{display:block;margin:8px 0;color:#713d55}
+.founder-section{background:#fff;padding:40px 6%}
+.founder-card{max-width:760px;margin:auto;background:#fff8fa;border:1px solid #f0d8e1;border-radius:20px;padding:30px;text-align:center;box-shadow:0 5px 20px #61394b08}
+.founder-card h3{font:26px Georgia,serif;color:#713d55;margin:0 0 10px}
+.founder-card p{color:#694e5b;line-height:1.6;margin:10px 0 0}
+.booking{background:#fff8fa}.booking-wrap{max-width:760px;margin:auto;background:#fff;border:1px solid #f0d8e1;border-radius:20px;padding:26px;box-shadow:0 5px 20px #61394b08}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{font-size:13px;font-weight:bold;color:#70475a}input,select,textarea{width:100%;padding:12px;border:1px solid #e4cbd5;border-radius:10px;margin-top:6px;font:14px Arial;background:white}textarea{min-height:85px;resize:vertical}.full{grid-column:1/-1}.hint{font-size:12px;color:#856e79;line-height:1.5}
+footer{text-align:center;padding:28px;background:#63364d;color:white}footer small{color:#f2dce5}
+@media(max-width:760px){nav{display:none}.hero{min-height:390px;background-position:60% center;padding:45px 6%}.hero h1{font-size:38px}.grid,.benefit-grid{grid-template-columns:repeat(2,1fr)}section{padding:42px 5%}}
+@media(max-width:460px){.grid,.benefit-grid{grid-template-columns:1fr 1fr;gap:10px}.service img{height:120px}.service div{padding:11px}.service h3{font-size:17px}form{grid-template-columns:1fr}.full{grid-column:auto}.logo{font-size:22px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">HERGLOW<small>BEAUTY AT HOME</small></div>
+ <nav>
+   <a href="#home" data-hi="होम" data-en="Home">होम</a>
+   <a href="#services" data-hi="सर्विस" data-en="Services">सर्विस</a>
+   <a href="#founder" data-hi="संस्थापक" data-en="Founder">संस्थापक</a>
+   <a href="#booking" data-hi="बुकिंग" data-en="Booking">बुकिंग</a>
+ </nav>
+ <div class="lang"><button id="hi" class="active" onclick="setLang('hi')">हिंदी</button> <button id="en" onclick="setLang('en')">English</button></div>
+</header>
+<main>
+<section class="hero" id="home"><div class="hero-content">
+ <div class="eyebrow" data-hi="आपकी खूबसूरती, आपकी सुविधा" data-en="BEAUTY, AT YOUR CONVENIENCE">आपकी खूबसूरती, आपकी सुविधा</div>
+ <h1 data-hi="अब ब्यूटी सर्विस आपके घर पर" data-en="Your Beauty. Your Rules.">अब ब्यूटी सर्विस आपके घर पर</h1>
+ <p data-hi="घर बैठे अपनी पसंद की ब्यूटी सर्विस बुक करें। हम आपके लिए ब्यूटी प्रोफेशनल भेजेंगे।" data-en="Book your favourite beauty services from home. We’ll coordinate a beauty professional for you.">घर बैठे अपनी पसंद की ब्यूटी सर्विस बुक करें। हम आपके लिए ब्यूटी प्रोफेशनल भेजेंगे।</p>
+ <a class="btn" href="#booking" data-hi="अपॉइंटमेंट बुक करें" data-en="Book an Appointment">अपॉइंटमेंट बुक करें</a>
+ <p class="note" data-hi="फिलहाल महिलाओं के लिए • खटीमा और टनकपुर" data-en="Currently for women • Khatima & Tanakpur">फिलहाल महिलाओं के लिए • खटीमा और टनकपुर</p>
+</div></section>
+
+<section id="services"><h2 class="section-title" data-hi="हमारी ब्यूटी सर्विसेज" data-en="Our Beauty Services">हमारी ब्यूटी सर्विसेज</h2><p class="sub" data-hi="अपनी जरूरत के अनुसार सर्विस चुनें" data-en="Choose a service that suits you">अपनी जरूरत के अनुसार सर्विस चुनें</p>
+<div class="grid">
+ <article class="service"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="Facial"><div><h3 data-hi="फेशियल और क्लीनअप" data-en="Facial & Cleanup">फेशियल और क्लीनअप</h3><span class="price">₹599*</span></div></article>
+ <article class="service"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80" alt="Waxing"><div><h3 data-hi="वैक्सिंग" data-en="Waxing">वैक्सिंग</h3><span class="price">₹499*</span></div></article>
+ <article class="service"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=700&q=80" alt="Beauty"><div><h3 data-hi="थ्रेडिंग" data-en="Threading">थ्रेडिंग</h3><span class="price">₹199*</span></div></article>
+ <article class="service"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=80" alt="Makeup"><div><h3 data-hi="पार्टी मेकअप" data-en="Party Makeup">पार्टी मेकअप</h3><span class="price">₹1,499*</span></div></article>
+</div><p class="note" style="text-align:center;margin-top:18px" data-hi="*ये डेमो कीमतें हैं। लॉन्च से पहले वास्तविक रेट तय किए जाएंगे।" data-en="*Demo prices only. Final rates will be confirmed before launch.">*ये डेमो कीमतें हैं। लॉन्च से पहले वास्तविक रेट तय किए जाएंगे।</p>
+</section>
+
+<section class="benefits"><h2 class="section-title" data-hi="HerGlow क्यों चुनें?" data-en="Why Choose HerGlow?">HerGlow क्यों चुनें?</h2><div class="benefit-grid">
+<div class="benefit">🏠<b data-hi="घर पर सर्विस" data-en="At-home service">घर पर सर्विस</b><span class="note" data-hi="आपकी सुविधा के अनुसार" data-en="At your convenience">आपकी सुविधा के अनुसार</span></div>
+<div class="benefit">✨<b data-hi="चुने हुए प्रोफेशनल" data-en="Selected professionals">चुने हुए प्रोफेशनल</b><span class="note" data-hi="बुकिंग से पहले पुष्टि" data-en="Confirmed before booking">बुकिंग से पहले पुष्टि</span></div>
+<div class="benefit">₹<b data-hi="स्पष्ट कीमतें" data-en="Clear pricing">स्पष्ट कीमतें</b><span class="note" data-hi="पहले से पैकेज देखें" data-en="See packages upfront">पहले से पैकेज देखें</span></div>
+<div class="benefit">💗<b data-hi="आसान बुकिंग" data-en="Easy booking">आसान बुकिंग</b><span class="note" data-hi="WhatsApp पर अनुरोध" data-en="Request via WhatsApp">WhatsApp पर अनुरोध</span></div>
+</div></section>
+
+<section class="founder-section" id="founder">
+ <div class="founder-card">
+   <h3 data-hi="संस्थापक से मिलिए" data-en="Meet The Founder">संस्थापक से मिलिए</h3>
+   <p style="font-size:20px; font-weight:bold; color:var(--pink);">कमलेश / Kamlesh</p>
+   <p data-hi="“HerGlow के जरिए हमारा उद्देश्य खटीमा और टनकपुर की महिलाओं को उनके घर पर ही बेहतरीन और सुरक्षित ब्यूटी सर्विसेज उपलब्ध कराना है।”" data-en="“Through HerGlow, our aim is to provide best and safe beauty services to women at their home in Khatima and Tanakpur.”">“HerGlow के जरिए हमारा उद्देश्य खटीमा और टनकपुर की महिलाओं को उनके घर पर ही बेहतरीन और सुरक्षित ब्यूटी सर्विसेज उपलब्ध कराना है।”</p>
+ </div>
+</section>
+
+<section id="booking" class="booking"><h2 class="section-title" data-hi="अपनी बुकिंग करें" data-en="Book Your Service">अपनी बुकिंग करें</h2><p class="sub" data-hi="फॉर्म भरें — आपकी रिक्वेस्ट WhatsApp पर खुलेगी" data-en="Fill the form — your request will open in WhatsApp">फॉर्म भरें — आपकी रिक्वेस्ट WhatsApp पर खुलेगी</p>
+<div class="booking-wrap"><form id="bookForm">
+<label><span data-hi="आपका नाम" data-en="Your name">आपका नाम</span><input id="name" required placeholder="नाम / Name"></label>
+<label><span data-hi="मोबाइल नंबर" data-en="Mobile number">मोबाइल नंबर</span><input id="phone" required inputmode="tel" pattern="[0-9]{10}" placeholder="10 digit number"></label>
+<label><span data-hi="शहर" data-en="City">शहर</span><select id="city"><option>खटीमा / Khatima</option><option>टनकपुर / Tanakpur</option></select></label>
+<label><span data-hi="सर्विस" data-en="Service">सर्विस</span><select id="service"><option>Facial & Cleanup – ₹599*</option><option>Waxing – ₹499*</option><option>Threading – ₹199*</option><option>Party Makeup – ₹1,499*</option></select></label>
+<label><span data-hi="पसंदीदा तारीख" data-en="Preferred date">पसंदीदा तारीख</span><input id="date" type="date" required></label>
+<label><span data-hi="पसंदीदा समय" data-en="Preferred time">पसंदीदा समय</span><select id="time"><option>सुबह / Morning</option><option>दोपहर / Afternoon</option><option>शाम / Evening</option></select></label>
+<label class="full"><span data-hi="पूरा पता और कोई जानकारी" data-en="Full address and notes">पूरा पता और कोई जानकारी</span><textarea id="address" required placeholder="मोहल्ला, घर नंबर, नजदीकी पहचान"></textarea></label>
+<div class="full"><button class="btn" type="submit" data-hi="WhatsApp पर बुकिंग भेजें" data-en="Send Booking on WhatsApp">WhatsApp पर बुकिंग भेजें</button><p class="hint" data-hi="नोट: अभी यह डेमो है। अपना WhatsApp Business नंबर जोड़ने के बाद ही बुकिंग आपके नंबर पर आएगी। भेजने से पहले नीचे कोड में नंबर बदलना होगा।" data-en="Note: This is a demo. Add your WhatsApp Business number in the site code before accepting real bookings.">नोट: अभी यह डेमो है। अपना WhatsApp Business नंबर जोड़ने के बाद ही बुकिंग आपके नंबर पर आएगी। भेजने से पहले नीचे कोड में नंबर बदलना होगा।</p></div>
+</form><div id="bookingResult" class="full" style="margin-top:18px"></div></div></section>
+</main>
+<footer>
+  <b>HERGLOW – Beauty at Home</b><br>
+  <small data-hi="खटीमा • टनकपुर | महिलाओं के लिए होम ब्यूटी सर्विस" data-en="Khatima • Tanakpur | At-home beauty services for women">खटीमा • टनकपुर | महिलाओं के लिए होम ब्यूटी सर्विस</small><br>
+  <small data-hi="संस्थापक (Founder): कमलेश" data-en="Founder: Kamlesh">संस्थापक (Founder): कमलेश</small><br>
+  <small>© 2026 HerGlow</small>
+</footer>
+<script>
+let lang='hi';
+function setLang(l){lang=l;document.documentElement.lang=l;document.querySelectorAll('[data-hi]').forEach(e=>e.textContent=e.dataset[l]);document.getElementById('hi').classList.toggle('active',l==='hi');document.getElementById('en').classList.toggle('active',l==='en')}
+document.getElementById('bookForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const whatsappNumber = '918920850383';
+  const fields = {
+    name: document.getElementById('name').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    city: document.getElementById('city').value,
+    service: document.getElementById('service').value,
+    date: document.getElementById('date').value,
+    time: document.getElementById('time').value,
+    address: document.getElementById('address').value.trim()
+  };
+  const message = [
+    'HerGlow Booking Request',
+    'Name: ' + fields.name,
+    'Customer Phone: ' + fields.phone,
+    'City: ' + fields.city,
+    'Service: ' + fields.service,
+    'Date: ' + fields.date,
+    'Time: ' + fields.time,
+    'Address: ' + fields.address
+  ].join('\n');
+  const link = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
+  const result = document.getElementById('bookingResult');
+  result.innerHTML = '<p><b>आपकी बुकिंग जानकारी तैयार है।</b></p><a class="btn" target="_blank" rel="noopener" href="' + link + '">WhatsApp खोलें और संदेश भेजें</a><p class="hint">अगर WhatsApp ऐप न खुले, तो WhatsApp Web खुलेगा। वहाँ Send दबाएँ।</p>';
+  result.scrollIntoView({behavior:'smooth', block:'center'});
+});
+</script>
+</body>
+</html>
